@@ -1,2 +1,2 @@
 # Calculator
-Calculador Básica Node,JS
+Calculador Básica Node.JS

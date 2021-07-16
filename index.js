@@ -1,39 +1,53 @@
+//Basic Calculator Program for CI Pipeline implementaion
+
 const express = require('express')
 const app = express()
 const PORT = 8080
 
-app.get('/api/sum', (req,res) => {
-    let op1 = Number(req.query.n1)
-    let op2 = Number(req.query.n2)
+// Operation functions
 
-    result = op1 + op2
+const sum = (num1, num2) => {
+    return num1 + num2
+}
+
+const sub = (num1, num2) => {
+    return num1 - num2
+}
+
+const mul = (num1, num2) => {
+    return num1 * num2
+}
+
+const div = (num1, num2) => {
+    return num1 / num2
+}
+
+ // HTTP Methods
+
+ app.get('/api/sum', (req,res) => {
+
+    result = sum(Number(req.query.n1), Number(req.query.n2))
 
     res.json(`result = ${result}`)
 })
 
 app.get('/api/sub', (req,res) => {
-    let op1 = Number(req.query.n1)
-    let op2 = Number(req.query.n2)
 
-    result = op1 - op2
+    result = sub(Number(req.query.n1), Number(req.query.n2))
 
     res.json(`result = ${result}`)
 })
 
 app.get('/api/mul', (req,res) => {
-    let op1 = Number(req.query.n1)
-    let op2 = Number(req.query.n2)
 
-    result = op1 * op2
+    result = mul(Number(req.query.n1), Number(req.query.n2))
 
     res.json(`result = ${result}`)
 })
 
 app.get('/api/div', (req,res) => {
-    let op1 = Number(req.query.n1)
-    let op2 = Number(req.query.n2)
 
-    result = op1 / op2
+    result = div(Number(req.query.n1), Number(req.query.n2))
 
     res.json(`result = ${result}`)
 })

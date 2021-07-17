@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test":  "jest --verbose --runInBand"
+    "test": "jest --verbose --runInBand",
+    "sonar": "node sonar-project.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "jest": "^27.0.6",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "sonarqube-scanner": "^2.8.1"
   }
 }

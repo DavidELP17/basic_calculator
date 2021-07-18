@@ -12,6 +12,11 @@ pipeline {
     }
 */
     stages {
+        stage ("Install dependencies") {
+            steps {
+                sh "/usr/bin/npm install"
+            }
+
         stage('build') {
             steps {
                 sh 'docker ps'

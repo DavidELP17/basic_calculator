@@ -16,6 +16,7 @@ pipeline {
             steps {
                 sh "/usr/bin/npm install"
             }
+        }
 
         stage('build') {
             steps {

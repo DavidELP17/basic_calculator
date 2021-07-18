@@ -36,8 +36,6 @@ pipeline {
                 sh "docker run ${dockerImage.id} npm test"
             }
         }
-    }
-
         stage('SCM') {
         checkout scm
         }
@@ -48,4 +46,7 @@ pipeline {
                 sh "${scannerHome}/bin/sonar-scanner"
             }
         }
+    }
+
+        
 }

@@ -13,6 +13,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'npm run start'
                 sh 'echo "Basic Calculator, CI pipeline start"'
                 //dockerImage = docker.build "${env.ARTIFACT_ID}"
             }

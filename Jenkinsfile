@@ -16,8 +16,10 @@ pipeline {
     stages {       
         stage('Run unit tests') {
             steps {
-                sh 'echo "Basic Calculator, CI pipeline start"'
-                sh "npm test"
+                script {
+                    sh 'echo "Basic Calculator, CI pipeline start"'
+                    sh "npm test"
+                }
             }
         }
 

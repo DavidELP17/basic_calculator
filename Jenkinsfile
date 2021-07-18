@@ -36,5 +36,18 @@ pipeline {
                 }
             }
         }
+
+        stage('Publish') {
+            when {
+                branch 'master'
+            }
+            steps {
+                script {
+                    docker.withRegistry("", "DockerHubCredentials") {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
     }
 }

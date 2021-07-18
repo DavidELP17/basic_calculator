@@ -1,13 +1,12 @@
-
 pipeline {
     agent any
-/*
+
+    //agent { docker { image 'node:10.19.0' } }
+
     tools {
         nodejs '10.19.0'
     }
-
-    //agent { docker { image 'node:10.19.0' } }
-*/
+    
     options {
         timeout(time: 5, unit: 'MINUTES')
     }
@@ -17,24 +16,22 @@ pipeline {
     }
 
     stages {
-        /*stage ("Install dependencies") {
+        stage ("Install dependencies") {
             steps {
-                sh '/usr/bin/npm --version'
-                sh '/usr/bin/npm install'
+                sh 'npm install'
             }
-        }*/
-
-        stage('build') {
+        
+        stage('Build') {
             steps {
                 sh 'echo "Basic Calculator, CI pipeline start"'
-                //dockerImage = docker.build "${env.ARTIFACT_ID}"
+                dockerImage = docker.build "${env.ARTIFACT_ID}"
             }
         }
 
         stage('Run tests') {
             steps {
-                sh 'npm run test'
-                //sh "docker run ${dockerImage.id} npm test"
+                //sh 'npm run test'
+                sh "docker run ${dockerImage.id} npm test"
             }
         }
     }

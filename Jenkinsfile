@@ -31,12 +31,18 @@ pipeline {
             }
         }
 
-        stage('Run tests') {
+        stage('Run unit tests') {
             steps {
                 sh "docker run ${dockerImage.id} npm test"
             }
         }
-        stage('SCM') {
+
+        stage('Run static quality tests') {
+            steps {
+                sh "docker run ${dockerImage.id} npm sonar"
+            }
+        }
+        /*stage('SCM') {
             steps {
                 checkout scm
             }
@@ -51,6 +57,6 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
     }
 }

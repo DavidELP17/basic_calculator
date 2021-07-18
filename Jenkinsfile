@@ -1,4 +1,4 @@
-Jenkinsfile (Declarative Pipeline)
+
 pipeline {
     agent { docker { image 'node:10.19.0' } }
 /*

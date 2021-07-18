@@ -15,7 +15,10 @@ The following tools where used in the implementation of the continuous integrati
 - Jenkins.
 - SonarQube.
 
-All the previous tools ran in local machine using the Port 3000 for the Application, default Port 9000 for SonarQube and Port 8080 for Jenkins.
+### Important note!
+
+All the previous tools ran in local machine using the Port 3000 for the Application, default Port 9000 for SonarQube and default Port 8080 for Jenkins.
+In the project I stated these Ip Address as localhost and Local IP Adresses to access these applications
 
 ### Plugins used in Jenkins:
 
@@ -29,6 +32,12 @@ All the previous tools ran in local machine using the Port 3000 for the Applicat
 
     ```jsx
     npm start
+    ```
+
+- Building the docker image inside project directory
+
+    ```jsx
+    docker build -t calculator .
     ```
 
 - Running the docker image

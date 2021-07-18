@@ -21,7 +21,7 @@ pipeline {
 
         stage('Run tests') {
             steps {
-                sh 'echo "testing"'
+                sh 'npm run test'
                 //sh "docker run ${dockerImage.id} npm test"
             }
         }

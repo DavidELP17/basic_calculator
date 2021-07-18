@@ -13,13 +13,7 @@ pipeline {
         ARTIFACT_ID = "calculator:${env.BUILD_NUMBER}"
     }
 
-    stages {
-        stage ("Install dependencies") {
-            steps {
-                sh 'npm install'
-            }
-        }
-        
+    stages {       
         stage('Build') {
             steps {
                 script {

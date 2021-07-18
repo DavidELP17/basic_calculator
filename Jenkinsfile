@@ -40,7 +40,6 @@ pipeline {
         stage('Publish') {
             steps {
                 script {
-                    sh "docker login -u davidelp17 -p 8285c652-9e8d-42ba-b1f3-802ae818cbbb"
                     docker.withRegistry("", "DockerHubCredentials") {
                         dockerImage.push()
                     }

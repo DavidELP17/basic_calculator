@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        ARTIFACT_ID = "/:${env.BUILD_NUMBER}"
+        ARTIFACT_ID = "./:${env.BUILD_NUMBER}"
     }
 
     stages {
@@ -15,15 +15,14 @@ pipeline {
             steps {
                 script {
                     sh 'echo "Basic Calculator, CI pipeline start"'
-                    sh 'npm --version'
-                    dockerImage = docker.build "${env.ARTIFACT_ID}"
+                    //dockerImage = docker.build "${env.ARTIFACT_ID}"
                 }
             }
         }
 
         stage('Run tests') {
             steps {
-                sh "docker run ${dockerImage.id} npm test"
+                //sh "docker run ${dockerImage.id} npm test"
             }
         }
     }

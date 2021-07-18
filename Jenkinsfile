@@ -12,6 +12,12 @@ pipeline {
     }
 */
     stages {
+        stage('Install dependencies') {
+            steps {
+                sh 'npm i"'
+            }
+        }
+
         stage('build') {
             steps {
                 sh 'echo "Basic Calculator, CI pipeline start"'

@@ -12,7 +12,7 @@ pipeline {
     }
 
     environment {
-        ARTIFACT_ID = "DavidELP17:${env.BUILD_NUMBER}"
+        ARTIFACT_ID = "davidelp17:${env.BUILD_NUMBER}"
     }
 
     stages {
@@ -25,7 +25,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    //sh 'echo "Basic Calculator, CI pipeline start"'
+                    sh 'echo "Basic Calculator, CI pipeline start"'
                     dockerImage = docker.build "${env.ARTIFACT_ID}"
                 }
             }

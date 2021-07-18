@@ -34,6 +34,8 @@ In the project I stated these IP Address as localhost and Local IP Adresses to a
     npm start
     ```
 
+Running using Docker
+
 - Building the docker image inside project directory
 
     ```jsx

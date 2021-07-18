@@ -4,6 +4,7 @@
   "description": "Basic Calculator program to implement CI Pipeline",
   "main": "app.js",
   "scripts": {
+    "run1": "node app.js",
     "start": "nodemon app.js",
     "test": "jest --verbose --runInBand",
     "sonar": "node sonar-project.js"

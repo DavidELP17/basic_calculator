@@ -1,6 +1,6 @@
 # Basic calculator
 
-# Basic calculator
+# Api Documentation
 
 Basic calculator backend application that performs the basic arithmetic operations such as sum, subtraction, multiplication and division.
 
@@ -23,7 +23,7 @@ All the previous tools ran in local machine using the Port 3000 for the Applicat
 - Docker plugin
 - NodeJS plugin
 
-### Commands to run the application
+## Commands to run the application
 
 - Running the program in local machine
 
@@ -37,7 +37,7 @@ All the previous tools ran in local machine using the Port 3000 for the Applicat
     docker run -d -p 3000:3000 calculator
     ```
 
-### HTTP Methods involved
+## HTTP Methods involved
 
 ```jsx
 GET /api/sum?n1=#&n2=#

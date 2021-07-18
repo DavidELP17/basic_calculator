@@ -6,12 +6,8 @@ pipeline {
         nodejs '10.19.0'
     }
 
-    environment {
-        HOME = '.'
-    }
-
     //agent { docker { image 'node:10.19.0' } }
-
+*/
     options {
         timeout(time: 5, unit: 'MINUTES')
     }
@@ -19,18 +15,17 @@ pipeline {
     environment {
         ARTIFACT_ID = "./:${env.BUILD_NUMBER}"
     }
-*/
+
     stages {
-        stage ("Install dependencies") {
+        /*stage ("Install dependencies") {
             steps {
                 sh '/usr/bin/npm --version'
                 sh '/usr/bin/npm install'
             }
-        }
+        }*/
 
         stage('build') {
             steps {
-                sh 'docker ps'
                 sh 'echo "Basic Calculator, CI pipeline start"'
                 //dockerImage = docker.build "${env.ARTIFACT_ID}"
             }

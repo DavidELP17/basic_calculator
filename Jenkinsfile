@@ -39,7 +39,7 @@ pipeline {
 
         stage('Run static quality tests') {
             steps {
-                sh "docker run ${dockerImage.id} npm sonar"
+                sh "docker run ${dockerImage.id} npm run sonar"
             }
         }
         /*stage('SCM') {

@@ -2,9 +2,9 @@
 pipeline {
     agent any
 
-    tools [
+    tools {
         nodejs 'node-10.19.0'
-    ]
+    }
 
     //agent { docker { image 'node:10.19.0' } }
 /*

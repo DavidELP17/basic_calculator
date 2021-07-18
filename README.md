@@ -18,7 +18,7 @@ The following tools where used in the implementation of the continuous integrati
 ### Important note!
 
 All the previous tools ran in local machine using the Port 3000 for the Application, default Port 9000 for SonarQube and default Port 8080 for Jenkins.
-In the project I stated these Ip Address as localhost and Local IP Adresses to access these applications
+In the project I stated these IP Address as localhost and Local IP Adresses to access these applications
 
 ### Plugins used in Jenkins:
 

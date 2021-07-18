@@ -14,24 +14,24 @@ pipeline {
     }
 
     stages {       
-        stage('Build') {
-            steps {
-                script {
-                    sh 'echo "Basic Calculator, CI pipeline start"'
-                    dockerImage = docker.build "${env.ARTIFACT_ID}"
-                }
-            }
-        }
-
         stage('Run unit tests') {
             steps {
-                sh "docker run ${dockerImage.id} npm test"
+                sh 'echo "Basic Calculator, CI pipeline start"'
+                sh "npm test"
             }
         }
 
         stage('Run static analysis of code') {
             steps {
-                sh "docker run ${dockerImage.id} npm run sonar"
+                sh "npm run sonar"
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    dockerImage = docker.build "${env.ARTIFACT_ID}"
+                }
             }
         }
     }

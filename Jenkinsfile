@@ -12,7 +12,7 @@ pipeline {
     }
 
     environment {
-        ARTIFACT_ID = "davidelp17:${env.BUILD_NUMBER}"
+        ARTIFACT_ID = "calculator:${env.BUILD_NUMBER}"
     }
 
     stages {
@@ -33,8 +33,20 @@ pipeline {
 
         stage('Run tests') {
             steps {
-                //sh 'npm run test'
                 sh "docker run ${dockerImage.id} npm test"
+            }
+        }
+    }
+
+    node {
+        stage('SCM') {
+        checkout scm
+        }
+
+        stage('SonarQube Analysis') {
+            def scannerHome = tool 'sonarqube-calculator';
+            withSonarQubeEnv() {
+                sh "${scannerHome}/bin/sonar-scanner"
             }
         }
     }

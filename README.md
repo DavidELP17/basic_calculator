@@ -61,3 +61,7 @@ GET /api/div?n1=#&n2=#
 Note: The # symbol represents a number which will be used to perform the operation.
 
 Note: The division by zero operation throws zero as a result.
+
+## Jenkins Pipeline stages
+![image](https://user-images.githubusercontent.com/17619940/126083843-038f2684-28ab-40c6-8cca-7ea3c50a1599.png)
+

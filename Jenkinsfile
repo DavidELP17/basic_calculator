@@ -6,6 +6,10 @@ pipeline {
         nodejs '10.19.0'
     }
 
+    environment {
+        HOME = '.'
+    }
+
     //agent { docker { image 'node:10.19.0' } }
 /*
     options {

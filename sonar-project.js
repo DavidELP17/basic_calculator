@@ -5,6 +5,6 @@ const sonarqubeScanner = require('sonarqube-scanner');
        'sonar.sources': '.',
        'sonar.inclusions' : '**', // Entry point of your code .
        'sonar.login': 'admin',
-       'sonar.password': 'adminadmin'
+       'sonar.password': 'adm1nadm1n'
        }
-     }, () => {});
+     });

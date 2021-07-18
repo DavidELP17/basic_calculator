@@ -99,13 +99,13 @@ describe('Calculator division unit tests', () => {
         let num1 = 70
         let num2 = 0
 
-        expect(Calculator.div(num1,num2)).toBe("Cannot divide by zero")
+        expect(Calculator.div(num1,num2)).toBe(0)
     })
 
     test('0/0 Indetermination', () =>{
         let num1 = 0
         let num2 = 0
 
-        expect(Calculator.div(num1,num2)).toBe("Cannot divide by zero")
+        expect(Calculator.div(num1,num2)).toBe(0)
     })
 })
